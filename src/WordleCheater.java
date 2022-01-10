@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class WordleCheater {
     public static void main(String[] args) throws IOException {
-        File words = new File("src/words.txt");
+        File words = new File("words.txt");
         Scanner scan = new Scanner(words);
         LinkedList list = new LinkedList(scan.nextLine());
         while(scan.hasNextLine()) {
