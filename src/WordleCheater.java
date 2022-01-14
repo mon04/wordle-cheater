@@ -35,7 +35,6 @@ public class WordleCheater {
             System.out.printf("\nYour suggested words are:\n%s\n", listString);
         else
             System.out.println("\nNo valid words found!");
-
     }
 
     public static String greenError() {
