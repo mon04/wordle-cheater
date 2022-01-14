@@ -15,7 +15,7 @@ public class WordleCheater {
         String input = scan.nextLine();
         String[] args1 = input.split(" ");
         list.filter(args1);
-        System.out.printf("Your suggested words are:\n%s", list);
+        System.out.printf("\nYour suggested words are:\n%s\n", list);
     }
 }
 

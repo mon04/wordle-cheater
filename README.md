@@ -11,6 +11,7 @@ Run ```WordleCheater.java``` and enter your arguments when prompted. A list of s
 ```
 Welcome to Wordle Cheater!
 Please enter a pattern: _el_o
+
 Your suggested words are:
 bello
 cello
@@ -25,6 +26,7 @@ jello
 ```
 Welcome to Wordle Cheater!
 Please enter a pattern: _el_o hbc
+
 Your suggested words are:
 deloo
 jello
