@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class WordleCheater {
     public static void main(String[] args) throws IOException {
-        File words = new File("words.txt");
+        File words = new File("src/words.txt");
         Scanner scan = new Scanner(words);
         LinkedList list = new LinkedList(scan.nextLine());
         while(scan.hasNextLine()) {
@@ -12,7 +12,9 @@ public class WordleCheater {
         }
         System.out.print("Welcome to Wordle Cheater!\nPlease enter a pattern: ");
         scan = new Scanner(System.in);
-        list.filter(scan.nextLine());
+        String input = scan.nextLine();
+        String[] args1 = input.split(" ");
+        list.filter(args1);
         System.out.println(list);
     }
 }
@@ -25,10 +27,10 @@ class LinkedList {
         //head.next = null;
     }
 
-    public void filter(String pattern) {
+    public void filter(String[] query) {
         Node current = head;
         while(current != null) {
-            if(!current.matches(pattern))
+            if(!current.matches(query[0]) || (query.length > 1 && current.contains(query[1])))
                 remove(current);
             current = current.next;
         }
@@ -79,8 +81,8 @@ class LinkedList {
             this.value = value;
         }
 
-        private boolean matches(String pattern) {
-            char[] p = pattern.toCharArray();
+        private boolean matches(String green) {
+            char[] p = green.toCharArray();
             char[] v = value.toCharArray();
             if(p.length != v.length)
                 return false;
@@ -88,6 +90,13 @@ class LinkedList {
                 if(p[i] != '_' && p[i] != v[i])
                     return false;
             return true;
+        }
+
+        private boolean contains(String gray) {
+            for(char gr: gray.toCharArray())
+                for(char vc: value.toCharArray())
+                    if(gr == vc) return true;
+            return false;
         }
     }
 }
