@@ -13,21 +13,20 @@ Welcome to Wordle Cheater!
 Please enter a pattern: _el_o
 
 Your suggested words are:
-bello
 cello
-deloo
-helco
 helio
 hello
 jello
+rello
+telco
 ```
 
 **Example 2** - Enter a pattern of green letters followed by a string of gray letters:
 ```
 Welcome to Wordle Cheater!
-Please enter a pattern: _el_o hbc
+Please enter a pattern: _el_o jrc
 
 Your suggested words are:
-deloo
-jello
+helio
+hello
 ```
