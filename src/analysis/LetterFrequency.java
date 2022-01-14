@@ -51,7 +51,7 @@ public class LetterFrequency {
             }
         }
 
-        System.out.println("char|   \tfreq.|\t   - %|\t    in words|\t   - %");
+        System.out.println("char    \tfreq. \t     % \t    in words \t     %");
         System.out.println("--------------------------------------------------");
         for(Letter l: letters) {
             int f = l.getFreq();

@@ -56,7 +56,7 @@ ollie
 
 ### Frequency of letters in the word list\*
 ```
-char|          freq.|	   - %|	    in words|	   - %
+char    	freq. 	     % 	    in words 	     %
 ------------------------------------------------------
    s    	6665 	51.380 	        5936 	45.760
    e    	6662 	51.357 	        5705 	43.979
