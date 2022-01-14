@@ -1,8 +1,8 @@
-## Wordle Cheater
-Welcome to my command-line program that gives word suggestions for the [online word-guessing game, Wordle](https://www.powerlanguage.co.uk/wordle/). I wrote this program for fun and for practice with implementing a linked list.
+## wordle cheater
+A command-line program that suggests solutions for the [online word-guessing game, Wordle](https://www.powerlanguage.co.uk/wordle/).
 
 ### How to use this program
-Run ```WordleCheater.java``` and enter your hints when prompted. Currently only ```green``` letters and ```gray``` letters are supported. ```green``` letters are those letters whose position in the solution you know, and ```gray``` letters are those letters you know are **not** contained in the solution.
+Run ```WordleCheater.java``` and enter your hints when prompted. Currently, only ```green``` letters and ```gray``` letters are supported. ```green``` letters are those letters whose position in the solution you know, and ```gray``` letters are those letters you know are **not** contained in the solution.
 
 **Example 1** - You know some ```greens```, you don't know any ```grays```:
 ```
