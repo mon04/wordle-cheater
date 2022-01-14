@@ -2,15 +2,16 @@
 Welcome to my command-line program that gives word suggestions for the [online word-guessing game, Wordle](https://www.powerlanguage.co.uk/wordle/). I wrote this program for fun and for practice with implementing a linked list.
 
 ### How to use this program
-Run ```WordleCheater.java``` and enter your arguments when prompted. A list of suggested words will be printed to the console. Currently only green and (optionally) gray letters are supported. You can enter one or two arguments.
+Run ```WordleCheater.java``` and enter your hints when prompted. Currently only ```green``` letters and ```gray``` letters are supported. ```green``` letters are those letters whose position in the solution you know, and ```gray``` letters are those letters you know are **not** contained in the solution.
 
-* The first of these will be the pattern of green letters you have found so far (use ```_``` to denote positions where the letter is unknown).
-* The second (optional) argument will be a string of gray letters, or those letters you know your solution does **not** contain.
-
-**Example 1** - Enter a pattern of green letters:
+**Example 1** - You know some ```greens```, you don't know any ```grays```:
 ```
-Welcome to Wordle Cheater!
-Please enter a pattern: _el_o
+Welcome to wordle cheater!
+**************************
+
+Enter your green letters: _el_o
+
+Enter your gray letters: 
 
 Your suggested words are:
 cello
@@ -21,12 +22,34 @@ rello
 telco
 ```
 
-**Example 2** - Enter a pattern of green letters followed by a string of gray letters:
+**Example 2** - You know some ```greens``` and some ```grays```:
 ```
-Welcome to Wordle Cheater!
-Please enter a pattern: _el_o jrc
+Welcome to wordle cheater!
+**************************
+
+Enter your green letters: _el_o
+
+Enter your gray letters: jrc
 
 Your suggested words are:
 helio
 hello
+```
+
+**Example 3** - You don't know any ```greens```, only some ```grays```:
+```
+Welcome to wordle cheater!
+**************************
+
+Enter your green letters: _____
+
+Enter your gray letters: auqwrtypsdfgjkzxcvbnm
+
+Your suggested words are:
+helio
+hello
+hillo
+hollo
+looie
+ollie
 ```
