@@ -27,5 +27,3 @@ Please enter a pattern: _el_o hbc
 deloo
 jello
 ```
-
-*I have no association with Wordle or its creator.*
