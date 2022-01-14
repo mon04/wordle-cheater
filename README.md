@@ -1,5 +1,5 @@
 ## Wordle Cheater
-Welcome to my command-line program that gives word suggestions for the [online language game, Wordle](https://www.powerlanguage.co.uk/wordle/). I wrote this program for fun and for practice with implementing a linked list.
+Welcome to my command-line program that gives word suggestions for the [online word-guessing game, Wordle](https://www.powerlanguage.co.uk/wordle/). I wrote this program for fun and for practice with implementing a linked list.
 
 ### How to use this program
 Run ```WordleCheater.java``` and enter your arguments when prompted. A list of suggested words will be printed to the console. Currently only green and (optionally) gray letters are supported. You can enter one or two arguments.
