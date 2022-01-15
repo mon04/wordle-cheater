@@ -1,10 +1,10 @@
 import java.io.File;
 import java.io.IOException;
-import java.util.Locale;
 import java.util.Scanner;
 
 public class WordleCheater {
     public static void main(String[] args) throws IOException {
+
         // Set up file and linked list of words
         File words = new File("src/wordles.txt");
         Scanner scan = new Scanner(words);
@@ -17,62 +17,55 @@ public class WordleCheater {
 
         // Take user inputs
         scan = new Scanner(System.in);
-        System.out.print("\nEnter your green letters: ");
-        String greens = scan.nextLine().toLowerCase();
-        while(!greens.matches("[_a-z]{5}")) {
-            System.out.print(greenError());
+        String greens, yellows, grays;
+
+        boolean first=true;
+        do {
+            if(!first) {
+                System.out.println("  Invalid! Please enter 5 characters, with non-greens denoted by '_'.");
+                System.out.println("  Examples: \"h____\", \"_an_c\"");
+            }
+            else first=false;
+            System.out.print("Enter your green pattern: ");
             greens = scan.nextLine().toLowerCase();
-        }
 
-        System.out.print("\nEnter your yellow letters: ");
-        String yellows = scan.nextLine().toLowerCase();
-        while(!yellows.matches("[_a-z]{5}")) {
-            System.out.print(yellowError());
+        } while(!greens.matches("[_a-z]{5}"));
+        System.out.println();
+
+        first=true;
+        do {
+            if(!first) {
+                System.out.println("  Invalid! Please enter 5 characters, with non-yellows denoted by '_'.");
+                System.out.println("  Examples: \"__a__\", \"m_a__\"");
+            }
+            else first=false;
+            System.out.print("Enter your yellow pattern: ");
             yellows = scan.nextLine().toLowerCase();
-        }
 
-        System.out.print("\nEnter your gray letters: ");
-        String grays = scan.nextLine().toLowerCase();
-        while(!grays.matches("[a-z]*")) {
-            System.out.print(grayError());
+        } while(!yellows.matches("[_a-z]{5}"));
+        System.out.println();
+
+        first=true;
+        do {
+            if(!first) {
+                System.out.println("  Invalid! Please enter only letters");
+                System.out.println("  Examples: \"j\", \"slekmzxt\"");
+            }
+            else first=false;
+            System.out.print("Enter your gray letters: ");
             grays = scan.nextLine().toLowerCase();
-        }
+
+        } while(!grays.matches("[a-z]*"));
+        System.out.println();
 
 
-        // Filter according to user input and print suggestions
-        list.filter(greens, grays, yellows);
+        // Filter and print suggestions
+        list.filter(greens, yellows, grays);
         String listString = list.toString();
         if(listString.length() > 0)
-            System.out.printf("\nYour suggested words are:\n%s\n", listString);
+            System.out.printf("Your suggested WORDLES are:\n%s\n", listString);
         else
-            System.out.println("\nNo valid words found!");
-    }
-
-    public static String greenError() {
-        return  "  ERROR: Invalid input!\n"+
-                "  Please ensure your pattern has 5 characters and non-greens are denoted with '_'\n"+
-                "  E.g. \"_el_o\"\n"+
-                "  E.g. \"_____\"\n\n"+
-
-                "Enter your green letters: ";
-    }
-
-    public static String yellowError() {
-        return  "  ERROR: Invalid input!\n"+
-                "  Please ensure your pattern has 5 characters and non-yellows are denoted with '_'\n"+
-                "  E.g. \"_el_o\"\n"+
-                "  E.g. \"_____\"\n\n"+
-
-                "Enter your yellow letters: ";
-    }
-
-    public static String grayError() {
-        return  "  ERROR: Invalid input!\n"+
-                "  Please ensure your string is empty or contains only letters."+
-                "  E.g. \"j\"\n"+
-                "  E.g. \"jmopi\"\n\n"+
-
-                "Enter your gray letters: ";
+            System.out.println("No valid WORDLES found!");
     }
 }
 
@@ -86,7 +79,7 @@ class LinkedList {
         //head.next = null;
     }
 
-    public void filter(String greens, String grays, String yellows) {
+    public void filter(String greens, String yellows, String grays) {
         if(!greens.equals("_____"))
             filterByGreen(greens);
         if(!yellows.equals("_____"))

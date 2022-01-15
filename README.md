@@ -1,60 +1,66 @@
 ## wordle cheater
-A command-line program that suggests solutions for the [online word-guessing game, Wordle](https://www.powerlanguage.co.uk/wordle/).
+A command-line program that suggests solutions for the [online word-guessing game, WORDLE](https://www.powerlanguage.co.uk/wordle/).
 
 ### How to use this program
-Run ```WordleCheater.java``` and enter your hints when prompted. Currently, only ```green``` letters and ```gray``` letters are supported. ```green``` letters are those letters whose position in the solution you know, and ```gray``` letters are those letters you know are **not** contained in the solution.
+Run ```WordleCheater.java``` and enter your hints when prompted.
 
-**Example 1** - You know some ```greens```, you don't know any ```grays```:
+**Example 1**
 ```
 Welcome to wordle cheater!
 **************************
+Enter your green pattern: h____
 
-Enter your green letters: _el_o
+Enter your yellow pattern: e__o_
 
-Enter your gray letters: 
+Enter your gray letters: tyvnsifa
 
-Your suggested words are:
-cello
-helio
+Your suggested WORDLES are:
 hello
-jello
-rello
-telco
+hohed
+hoked
+holed
+holme
+homed
+homer
+homme
+hoped
+hoper
+horde
+horme
+howbe
+howre
+hoxed
 ```
 
-**Example 2** - You know some ```greens``` and some ```grays```:
+**Example 3**
 ```
 Welcome to wordle cheater!
 **************************
+Enter your green pattern: h_ll_
 
-Enter your green letters: _el_o
+Enter your yellow pattern: _____
 
-Enter your gray letters: jrc
+Enter your gray letters: a
 
-Your suggested words are:
-helio
+Your suggested WORDLES are:
 hello
-```
-
-**Example 3** - You don't know any ```greens```, only some ```grays```:
-```
-Welcome to wordle cheater!
-**************************
-
-Enter your green letters: _____
-
-Enter your gray letters: auqwrtypsdfgjkzxcvbnm
-
-Your suggested words are:
-helio
-hello
+hells
 hillo
+hills
+hilly
 hollo
-looie
-ollie
+holly
+hullo
+hulls
+hully
 ```
 
-### Frequency of letters in the word list\*
+### Some data about the WORDLE list\*
+* ```    char``` a letter in the alphabet
+* ```   freq.``` how many times this letter occurs in the list (repeats incl.)
+* ```in words``` how many WORDLES contain this letter at least once
+* ```       %``` the left-adjacent column expressed as a percentage of the total
+
 ```
 char    	freq. 	     % 	    in words 	     %
 ------------------------------------------------------
@@ -85,4 +91,4 @@ char    	freq. 	     % 	    in words 	     %
    x    	 288 	 2.220 	         287 	 2.212
    q    	 112 	 0.863 	         111 	 0.856
 ```
-*\*word list may vary from the one used by Wordle*
+*\*word list may differ from the one used by WORDLE*
