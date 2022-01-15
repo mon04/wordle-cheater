@@ -32,7 +32,7 @@ howre
 hoxed
 ```
 
-**Example 3**
+**Example 2**
 ```
 Welcome to wordle cheater!
 **************************
