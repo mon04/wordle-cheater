@@ -6,13 +6,13 @@ public class WordleCheater {
     public static void main(String[] args) throws IOException {
 
         // Set up file and linked list of words
-        File words = new File("src/wordles.txt");
+        File words = new File("src/words.txt");
         Scanner scan = new Scanner(words);
         LinkedList list = new LinkedList(scan.nextLine());
         while(scan.hasNextLine()) {
             list.insert(scan.nextLine());
         }
-        System.out.print("Welcome to wordle cheater!\n**************************\n");
+        System.out.print("Welcome to wordle cheater!\n**************************\n\n");
 
         // Take user inputs
         scan = new Scanner(System.in);
@@ -22,7 +22,7 @@ public class WordleCheater {
         do {
             if(!first) {
                 System.out.println("  Invalid! Please enter 5 characters, with non-greens denoted by '_'.");
-                System.out.println("  Examples: \"h____\", \"_an_c\"");
+                System.out.println("  Examples: \"h____\", \"_an_c\", \"_____\"");
             }
             else first=false;
             System.out.print("Enter your green pattern: ");
@@ -35,7 +35,7 @@ public class WordleCheater {
         do {
             if(!first) {
                 System.out.println("  Invalid! Please enter 5 characters, with non-yellows denoted by '_'.");
-                System.out.println("  Examples: \"__a__\", \"m_a__\"");
+                System.out.println("  Examples: \"__a__\", \"m_a__\", \"_____\"");
             }
             else first=false;
             System.out.print("Enter your yellow pattern: ");
@@ -60,9 +60,9 @@ public class WordleCheater {
         // Filter and print suggestions
         list.filter(greens, yellows, grays);
         if(list.size() > 0)
-            System.out.printf("Your suggested WORDLES are:\n%s\n", list);
+            System.out.printf("Your suggested words are:\n%s\n", list);
         else
-            System.out.println("No valid WORDLES found!");
+            System.out.println("No valid words found!");
     }
 }
 

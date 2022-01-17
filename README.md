@@ -55,11 +55,11 @@ hulls
 hully
 ```
 
-### Some data about the WORDLE list\*
-* ```    char``` a letter in the alphabet
-* ```   freq.``` how many times this letter occurs in the list (repeats incl.)
-* ```in words``` how many WORDLES contain this letter at least once
-* ```       %``` the left-adjacent column expressed as a percentage of the total
+### Some data about the word list \*
+* ```char``` a letter in the alphabet
+* ```freq``` how many times this letter occurs in the list (repeats incl.)
+* ```words``` how many words contain this letter at least once
+* ```" %``` percentage expression of the left-adjacent value
 
 ```
 char		freq	   " %		words	   " %
@@ -91,4 +91,4 @@ char		freq	   " %		words	   " %
    x		 288	 2.220		  287	 2.212
    q		 112	 0.863		  111	 0.856
 ```
-*\*word list may differ from the one used by WORDLE*
+*\* word list may differ from the one used by WORDLE*
