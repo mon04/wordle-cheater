@@ -14,7 +14,6 @@ public class WordleCheater {
         }
         System.out.print("Welcome to wordle cheater!\n**************************\n");
 
-
         // Take user inputs
         scan = new Scanner(System.in);
         String greens, yellows, grays;
@@ -58,12 +57,10 @@ public class WordleCheater {
         } while(!grays.matches("[a-z]*"));
         System.out.println();
 
-
         // Filter and print suggestions
         list.filter(greens, yellows, grays);
-        String listString = list.toString();
-        if(listString.length() > 0)
-            System.out.printf("Your suggested WORDLES are:\n%s\n", listString);
+        if(list.size() > 0)
+            System.out.printf("Your suggested WORDLES are:\n%s\n", list);
         else
             System.out.println("No valid WORDLES found!");
     }

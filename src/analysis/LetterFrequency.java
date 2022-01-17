@@ -18,8 +18,8 @@ public class LetterFrequency {
         try {
             Scanner scan = new Scanner(new File("src/wordles.txt"));
             while(scan.hasNextLine()) {
-                char[] word = scan.nextLine().toLowerCase().toCharArray();
                 boolean[] contains = new boolean[26]; Arrays.fill(contains, false);
+                char[] word = scan.nextLine().toLowerCase().toCharArray();
                 for(char c: word) {
                     int i = c-'a';
                     freqs[i]++;
@@ -51,14 +51,14 @@ public class LetterFrequency {
             }
         }
 
-        System.out.println("char    \tfreq. \t     % \t    in words \t     %");
-        System.out.println("--------------------------------------------------");
+        System.out.println("char\t\tfreq\t   \" %\t\twords\t   \" %");
+        System.out.println("----------------------------------------------");
         for(Letter l: letters) {
             int f = l.getFreq();
             int p = l.getWordPresence();
             float fpc = (float)(f*100)/12972;
             float ppc = (float)(p*100)/12972;
-            System.out.printf("%4c    \t%5d \t%6.3f \t    %8d \t%6.3f\n", l.getValue(), f, fpc, p, ppc);
+            System.out.printf("%4c\t\t%4d\t%6.3f\t\t%5d\t%6.3f\n", l.getValue(), f, fpc, p, ppc);
         }
     }
 
