@@ -14,55 +14,54 @@ public class WordleCheater {
         }
         System.out.print("Welcome to wordle cheater!\n**************************\n\n");
 
-        // Take user inputs
-        scan = new Scanner(System.in);
-        String greens, yellows, grays;
+        while(list.size() > 1) {
+            // Take user inputs
+            scan = new Scanner(System.in);
+            String greens, yellows, grays;
 
-        boolean first=true;
-        do {
-            if(!first) {
-                System.out.println("  Invalid! Please enter 5 characters, with non-greens denoted by '_'.");
-                System.out.println("  Examples: \"h____\", \"_an_c\", \"_____\"");
-            }
-            else first=false;
-            System.out.print("Enter your green pattern: ");
-            greens = scan.nextLine().toLowerCase();
+            boolean first = true;
+            do {
+                if (!first) {
+                    System.out.println("  Invalid! Please enter 5 characters, with non-greens denoted by '_'.");
+                    System.out.println("  Examples: \"h____\", \"_an_c\", \"_____\"");
+                } else first = false;
+                System.out.print("Enter your green pattern: ");
+                greens = scan.nextLine().toLowerCase();
 
-        } while(!greens.matches("[_a-z]{5}"));
-        System.out.println();
+            } while (!greens.matches("[_a-z]{5}"));
+            System.out.println();
 
-        first=true;
-        do {
-            if(!first) {
-                System.out.println("  Invalid! Please enter 5 characters, with non-yellows denoted by '_'.");
-                System.out.println("  Examples: \"__a__\", \"m_a__\", \"_____\"");
-            }
-            else first=false;
-            System.out.print("Enter your yellow pattern: ");
-            yellows = scan.nextLine().toLowerCase();
+            first = true;
+            do {
+                if (!first) {
+                    System.out.println("  Invalid! Please enter 5 characters, with non-yellows denoted by '_'.");
+                    System.out.println("  Examples: \"__a__\", \"m_a__\", \"_____\"");
+                } else first = false;
+                System.out.print("Enter your yellow pattern: ");
+                yellows = scan.nextLine().toLowerCase();
 
-        } while(!yellows.matches("[_a-z]{5}"));
-        System.out.println();
+            } while (!yellows.matches("[_a-z]{5}"));
+            System.out.println();
 
-        first=true;
-        do {
-            if(!first) {
-                System.out.println("  Invalid! Please enter only letters");
-                System.out.println("  Examples: \"j\", \"slekmzxt\"");
-            }
-            else first=false;
-            System.out.print("Enter your gray letters: ");
-            grays = scan.nextLine().toLowerCase();
+            first = true;
+            do {
+                if (!first) {
+                    System.out.println("  Invalid! Please enter only letters");
+                    System.out.println("  Examples: \"j\", \"slekmzxt\"");
+                } else first = false;
+                System.out.print("Enter your gray letters: ");
+                grays = scan.nextLine().toLowerCase();
 
-        } while(!grays.matches("[a-z]*"));
-        System.out.println();
+            } while (!grays.matches("[a-z]*"));
+            System.out.println();
 
-        // Filter and print suggestions
-        list.filter(greens, yellows, grays);
-        if(list.size() > 0)
-            System.out.printf("Your suggested words are:\n%s\n", list);
-        else
-            System.out.println("No valid words found!");
+            // Filter and print suggestions
+            list.filter(greens, yellows, grays);
+            if (list.size() > 0)
+                System.out.printf("Your suggested words are:\n%s\n----------------\n\n", list);
+            else
+                System.out.println("No valid words found!");
+        }
     }
 }
 
